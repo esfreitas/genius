@@ -29,12 +29,13 @@ let lightColor = (element, number) =>{
     number = number * 500;
     setTimeout(()=>{
         element.classList.add('selected');
-    }, number - 250);
+        // remove a cor após um tempo
+        setTimeout(() => {
+            element.classList.remove('selected');
+        }, 500);
+    }, 1000)//number - 250);
 
-    // remove a cor após um tempo
-    setTimeout(() => {
-        element.classList.remove('selected');
-    }, 500);
+ 
 }
 
 //Checa se os botões foram clicados conforme a ordem gerada pelo game
